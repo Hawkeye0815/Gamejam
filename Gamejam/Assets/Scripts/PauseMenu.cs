@@ -6,8 +6,31 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    public bool PauseIsActive ;
 
+    void Start()
+    {
+        PauseIsActive = false;
+    }
     
+    void Update() 
+    {
+       if(Input.GetKeyDown(KeyCode.Escape)) 
+       { 
+            if(!PauseIsActive) 
+            {
+            Pause();
+            Cursor.lockState = CursorLockMode.None;
+        PauseIsActive = true;
+            }
+            else 
+            {
+            Resume();
+            }
+       } 
+      
+    }
+
     public void Pause() 
     {
         pauseMenu.SetActive(true);
@@ -17,6 +40,8 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        PauseIsActive = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Exit() 

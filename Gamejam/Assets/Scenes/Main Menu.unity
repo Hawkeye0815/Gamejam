@@ -132,7 +132,6 @@ GameObject:
   m_Component:
   - component: {fileID: 76263076}
   - component: {fileID: 76263077}
-  - component: {fileID: 76263078}
   m_Layer: 5
   m_Name: AudioToggle
   m_TagString: Untagged
@@ -208,7 +207,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 76263078}
+      - m_Target: {fileID: 545816063}
         m_TargetAssemblyTypeName: SetVolume, Assembly-CSharp
         m_MethodName: Mute
         m_Mode: 1
@@ -232,20 +231,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
---- !u!114 &76263078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76263075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eaf4b4e6f479ec47bdb4f87b3a7022f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixer: {fileID: 0}
+  m_IsOn: 0
 --- !u!1 &115047282
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +451,6 @@ GameObject:
   m_Component:
   - component: {fileID: 151745342}
   - component: {fileID: 151745344}
-  - component: {fileID: 151745343}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -496,19 +481,6 @@ RectTransform:
   m_AnchoredPosition: {x: 160, y: -290}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &151745343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151745341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eaf4b4e6f479ec47bdb4f87b3a7022f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: c33d15527f07aed4fa4538883baa8147, type: 2}
 --- !u!114 &151745344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,7 +532,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 151745343}
+      - m_Target: {fileID: 545816063}
         m_TargetAssemblyTypeName: SetVolume, Assembly-CSharp
         m_MethodName: SetMusicLevel
         m_Mode: 0
@@ -1075,9 +1047,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 545816063}
+      - m_Target: {fileID: 545816060}
         m_TargetAssemblyTypeName: SetVolume, Assembly-CSharp
-        m_MethodName: SetMasterLevel
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1871,7 +1843,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1120305226}
   - component: {fileID: 1120305228}
-  - component: {fileID: 1120305227}
   m_Layer: 5
   m_Name: SoundSlider
   m_TagString: Untagged
@@ -1902,19 +1873,6 @@ RectTransform:
   m_AnchoredPosition: {x: 160, y: -225}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1120305227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120305225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eaf4b4e6f479ec47bdb4f87b3a7022f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: c33d15527f07aed4fa4538883baa8147, type: 2}
 --- !u!114 &1120305228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1966,7 +1924,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1120305227}
+      - m_Target: {fileID: 545816063}
         m_TargetAssemblyTypeName: SetVolume, Assembly-CSharp
         m_MethodName: SetSoundLevel
         m_Mode: 0
@@ -3554,6 +3512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  PauseIsActive: 0
 --- !u!114 &2010212870
 MonoBehaviour:
   m_ObjectHideFlags: 0
