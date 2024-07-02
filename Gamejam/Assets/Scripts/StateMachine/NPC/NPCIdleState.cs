@@ -26,7 +26,7 @@ public class NPCIdleState : BaseState
         // Can see or hear player > Switch to flee
         if(npcStateMachine.CanSeePlayer || npcStateMachine.CanHearPlayer) 
         {
-            npcStateMachine.SwitchToState(npcStateMachine.HideState);
+            npcStateMachine.SwitchToState(npcStateMachine.AttackState);
         }
         // Time is up > Switch to patrol
         if(Time.time > leaveTime)

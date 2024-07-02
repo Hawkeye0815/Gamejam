@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NPCStateMachine : BaseStateMachine
+public class NPCStateMachine1 : BaseStateMachine
 {
     public Vector3 PlayerPosition { get => _player.position; }
     public bool CanSeePlayer { get => _eyes.IsDetecting; }
@@ -9,9 +9,7 @@ public class NPCStateMachine : BaseStateMachine
 
     public NPCIdleState IdleState;
     public NPCPatrolState PatrolState;
-    //public NPCFleeState FleeState;
-    //public NPCHideState HideState;
-    public NPCAttackState AttackState;
+    public NPCFleeState AttackState;
 
     private Eyes _eyes;
     private Ears _ears;

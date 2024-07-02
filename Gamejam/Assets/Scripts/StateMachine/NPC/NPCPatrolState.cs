@@ -42,7 +42,7 @@ public class NPCPatrolState : BaseState
         // Can see player > Switch to flee
         if (npcStateMachine.CanSeePlayer || npcStateMachine.CanHearPlayer)
         {
-            npcStateMachine.SwitchToState(npcStateMachine.HideState);
+            npcStateMachine.SwitchToState(npcStateMachine.AttackState);
         }
     }
 

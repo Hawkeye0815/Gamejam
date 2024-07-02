@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7041044118727146727}
   - component: {fileID: 1123440826839046310}
   - component: {fileID: 128133145870120788}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Munition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Speed","value":{"$content":50.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Speed","value":{"$content":30.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &1123440826839046310
