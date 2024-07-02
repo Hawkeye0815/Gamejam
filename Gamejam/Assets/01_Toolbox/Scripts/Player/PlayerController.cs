@@ -60,14 +60,15 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat(speedParameterHash, speed, locomotionParameterDamping, Time.deltaTime);
 
         // Make movement direction depend on camera rotation
-        movementDirection = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) 
-            * movementDirection;
+        //movementDirection = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) 
+        //* movementDirection;
 
         // Rotate the character to movement direction
-        if(movementDirection != Vector3.zero) 
-        {
-            Quaternion targetCharacterRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetCharacterRotation, rotationSpeed * Time.deltaTime);
-        }
+        // if(movementDirection != Vector3.zero) 
+        // {
+        //    Quaternion targetCharacterRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+        //    transform.rotation = Quaternion.RotateTowards(transform.rotation, targetCharacterRotation, rotationSpeed * Time.deltaTime);
+        // }
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, cameraTransform.rotation, rotationSpeed * Time.deltaTime);
     }
 }
