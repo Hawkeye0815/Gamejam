@@ -19,7 +19,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Invoke("shake", 3f);
     }
 
     void shake()
