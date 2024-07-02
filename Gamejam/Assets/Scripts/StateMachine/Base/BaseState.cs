@@ -23,5 +23,5 @@ public abstract class BaseState
     /// <param name="controller">Controlling state machine</param>
     public abstract void OnUpdateState(BaseStateMachine controller);
 
-    
+    public abstract void OnCollisionEnter(BaseStateMachine controller, Collision collision);
 }

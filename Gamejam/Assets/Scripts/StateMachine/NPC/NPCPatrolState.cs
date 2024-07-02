@@ -45,7 +45,10 @@ public class NPCPatrolState : BaseState
             npcStateMachine.SwitchToState(npcStateMachine.AttackState);
         }
     }
+    public override void OnCollisionEnter(BaseStateMachine controller, Collision collision)
+    {
 
+    }
     public override void OnExitState(BaseStateMachine controller)
     {
         Debug.Log("NPCPatrolState:OnExitState");

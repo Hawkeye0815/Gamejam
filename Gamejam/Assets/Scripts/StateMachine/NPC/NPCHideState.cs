@@ -42,7 +42,10 @@ public class NPCHideState : BaseState
 
         npcStateMachine.SetAgentSpeedMultiplier(1f);
     }
+    public override void OnCollisionEnter(BaseStateMachine controller, Collision collision)
+    {
 
+    }
     public Vector3 GetNearestHidingSpot(Vector3 position) 
     {
         if (HidingSpots.Length < 2)

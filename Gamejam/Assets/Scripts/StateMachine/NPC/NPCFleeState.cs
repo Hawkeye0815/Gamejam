@@ -34,7 +34,10 @@ public class NPCFleeState : BaseState
             npcStateMachine.SwitchToState(npcStateMachine.IdleState);
         }
     }
+    public override void OnCollisionEnter(BaseStateMachine controller, Collision collision)
+    {
 
+    }
     public override void OnExitState(BaseStateMachine controller)
     {
         Debug.Log("NPCFleeState:OnExitState");
