@@ -22,7 +22,7 @@ public class NPCAttackState : BaseState
 
         if (!npcStateMachine.CanSeePlayer && !npcStateMachine.CanHearPlayer)
         {
-            npcStateMachine.SwitchToState(npcStateMachine.IdleState);
+            //npcStateMachine.SwitchToState(npcStateMachine.IdleState);
         }
         else
         {

@@ -17,10 +17,12 @@ public class Eyes : Sense
         if(IsInRange() && IsInFieldOfView() && IsNotOccluded()) 
         {
             IsDetecting = true;
+            Debug.Log("Seen");
         }
         else 
         {
             IsDetecting = false;
+            Debug.Log("NotSeen");
         }
     }
 
