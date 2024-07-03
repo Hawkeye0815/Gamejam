@@ -5,6 +5,9 @@ using UnityEngine;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+
+    public bool IsAudible { get; private set; }
+
     // how fast the character can turn
     public float rotationSpeed;
 
@@ -71,10 +74,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetCharacterRotation, rotationSpeed * Time.deltaTime);
          }
 
-        //Rotation.y = cameraTransform.rotation.y;
-        // Rotation.x = 0;
-        //Rotation.z = 0;
-        //transform.rotation = Quaternion.RotateTowards(transform.rotation, Rotation, rotationSpeed * Time.deltaTime);
+        IsAudible = speed >= 0.5f;
 
     }
 }

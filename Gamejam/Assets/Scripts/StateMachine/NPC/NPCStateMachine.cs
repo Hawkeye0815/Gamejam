@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class NPCStateMachine : BaseStateMachine
 {
     public Vector3 PlayerPosition { get => _player.position; }
@@ -25,7 +26,7 @@ public class NPCStateMachine : BaseStateMachine
 #if UNITY_EDITOR
     void OnDrawGizmos()
     {
-        WaypointGizmos.DrawWayPoints(PatrolState.Waypoints);
+        //WaypointGizmos.DrawWayPoints(PatrolState.Waypoints);
     }
 #endif
     public override void Initialize()
