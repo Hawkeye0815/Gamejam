@@ -8,9 +8,11 @@ public class NPCAttackState : BaseState
 {
     public float damage;
     private Vector3 _attackPosition;
+     
     public override void OnEnterState(BaseStateMachine controller)
     {
-        Debug.Log("NPCAttackState:OnEnterState");      
+        Debug.Log("NPCAttackState:OnEnterState");
+        
     }
 
     public override void OnUpdateState(BaseStateMachine controller)
@@ -19,17 +21,21 @@ public class NPCAttackState : BaseState
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         _attackPosition = npcStateMachine.PlayerPosition;
+        
+       
 
-        if (!npcStateMachine.CanSeePlayer && !npcStateMachine.CanHearPlayer)
-        {
-            npcStateMachine.SwitchToState(npcStateMachine.IdleState);
-        }
-        else
-        {
-            npcStateMachine.SetDestination(_attackPosition);
-            npcStateMachine.SetAgentSpeedMultiplier(2.5f);
-        }
 
+
+            if (!npcStateMachine.CanSeePlayer && !npcStateMachine.CanHearPlayer)
+            {
+                npcStateMachine.SwitchToState(npcStateMachine.IdleState);
+            }
+            else
+            {
+                npcStateMachine.SetDestination(_attackPosition);
+                npcStateMachine.SetAgentSpeedMultiplier(2.5f);
+            }
+       
 
     }
 

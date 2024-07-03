@@ -13,13 +13,14 @@ public class NPCPatrolState : BaseState
 
     private Vector3 _targetPosition;
 
-
+    private int RandomIndex;
     public override void OnEnterState(BaseStateMachine controller)
     {
         Debug.Log("NPCPatrolState:OnEnterState");
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         Waypoints = (List<Transform>)Variables.ActiveScene.Get("Path");
+        RandomIndex = npcStateMachine.RandomIndex();
 
         if (_targetPosition == Vector3.zero) 
         {
@@ -62,7 +63,10 @@ public class NPCPatrolState : BaseState
 
     public Vector3 GetNextWaypoint() 
     {
-        _currentWaypointIndex = ++_currentWaypointIndex % Waypoints.Count;
-        return Waypoints[_currentWaypointIndex].position;
+
+
+         
+        return Waypoints[RandomIndex].position;
     }
 }
+//_currentWaypointIndex = ++_currentWaypointIndex % Waypoints.Count;

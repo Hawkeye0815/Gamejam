@@ -7,6 +7,7 @@ public class NPCStateMachine : BaseStateMachine
     public Vector3 PlayerPosition { get => _player.position; }
     public bool CanSeePlayer { get => _eyes.IsDetecting; }
     public bool CanHearPlayer { get => _ears.IsDetecting;  }
+    public int i { get => index; }
 
     public NPCIdleState IdleState;
     public NPCPatrolState PatrolState;
@@ -22,7 +23,7 @@ public class NPCStateMachine : BaseStateMachine
     private Animator _animator;
 
     private float _initialAgentSpeed;
-
+    
 #if UNITY_EDITOR
     void OnDrawGizmos()
     {
@@ -31,6 +32,7 @@ public class NPCStateMachine : BaseStateMachine
 #endif
     public override void Initialize()
     {
+        
         _eyes = GetComponentInChildren<Eyes>();
         _ears = GetComponentInChildren<Ears>();
 
@@ -58,4 +60,8 @@ public class NPCStateMachine : BaseStateMachine
         _agent.speed = _initialAgentSpeed * multiplier;
     }
 
+    public int RandomIndex()
+    {
+        return i;
+    }
 }

@@ -1,4 +1,6 @@
 using UnityEngine;
+using Unity.VisualScripting;
+using System.Collections.Generic;
 
 /// <summary>
 /// Base class for all state machines
@@ -7,16 +9,22 @@ public abstract class BaseStateMachine : MonoBehaviour
 {
     // State that is currently being executed
     public BaseState CurrentState { get; protected set; }
+    public int index { get; protected set; }
+
+    public List<Transform> Waypoints = new List<Transform>();
 
     void Start()
     {
-        Initialize();    
+        Initialize();
+        Waypoints = (List<Transform>)Variables.ActiveScene.Get("Path");
+        
     }
 
     void Update()
     {        
         CurrentState?.OnUpdateState(this);
         Tick();
+        index = Random.Range(0, Waypoints.Count);
     }
 
     /// <summary>
