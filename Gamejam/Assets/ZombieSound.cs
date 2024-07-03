@@ -10,7 +10,7 @@ public class ZombieSound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //SoundFXManager.instance.PlayRandomSoundFX(idleSoundClips, transform, 1f);
+        SoundFXManager.instance.PlayRandomSoundFX(idleSoundClips, transform, 1f);
     }
 
     // Update is called once per frame
