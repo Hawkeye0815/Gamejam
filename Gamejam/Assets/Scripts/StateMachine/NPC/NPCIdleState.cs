@@ -35,7 +35,7 @@ public class NPCIdleState : BaseState
         }
     }
 
-    public override void OnCollisionEnter(BaseStateMachine controller, Collision collision)
+    public override void OnTriggerEnter(BaseStateMachine controller, Collision collision)
     {
 
     }

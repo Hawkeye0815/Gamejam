@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 [Serializable]
 public class NPCAttackState : BaseState
 {
-    public int damage;
+    public float damage;
     private Vector3 _attackPosition;
     public override void OnEnterState(BaseStateMachine controller)
     {
@@ -22,7 +22,7 @@ public class NPCAttackState : BaseState
 
         if (!npcStateMachine.CanSeePlayer && !npcStateMachine.CanHearPlayer)
         {
-            //npcStateMachine.SwitchToState(npcStateMachine.IdleState);
+            npcStateMachine.SwitchToState(npcStateMachine.IdleState);
         }
         else
         {
@@ -33,15 +33,15 @@ public class NPCAttackState : BaseState
 
     }
 
-    public override void OnCollisionEnter(BaseStateMachine controller, Collision collision)
+    public override void OnTriggerEnter(BaseStateMachine controller, Collision collision)
     {
-        Debug.Log("NPCAttackState:OnUpdateState");
+        Debug.Log("NPCAttackState:Collision");
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         GameObject other = collision.gameObject;
         if(other.CompareTag("Player"))
         {
-            int Health = (int)Variables.Object(other).Get("PlayerHealth");
+            float Health = (float)Variables.Object(other).Get("PlayerHealth");
             Variables.Object(other).Set("PlayerHealth", Health - damage);
 
             npcStateMachine.SwitchToState(npcStateMachine.IdleState);

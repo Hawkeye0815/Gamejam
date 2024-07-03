@@ -42,7 +42,7 @@ public class NPCHideState : BaseState
 
         npcStateMachine.SetAgentSpeedMultiplier(1f);
     }
-    public override void OnCollisionEnter(BaseStateMachine controller, Collision collision)
+    public override void OnTriggerEnter(BaseStateMachine controller, Collision collision)
     {
 
     }
