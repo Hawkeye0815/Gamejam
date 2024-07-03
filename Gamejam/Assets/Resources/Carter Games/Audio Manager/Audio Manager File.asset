@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabPos: 0
   audioMixer:
-  - {fileID: 0}
-  soundPrefab: {fileID: 0}
-  isPopulated: 0
-  directory: []
-  library: []
+  - {fileID: 4920496936983177949, guid: c33d15527f07aed4fa4538883baa8147, type: 2}
+  soundPrefab: {fileID: 322064603624763291, guid: f97cb5ab9dca8bd488116e0ffc057e10,
+    type: 3}
+  isPopulated: 1
+  directory:
+  - Assets/Phyll/Sound/Music
+  library:
+  - key: risk-136788
+    value: {fileID: 8300000, guid: 92ed54f1f12455c4baf5d622f04a7f44, type: 3}
