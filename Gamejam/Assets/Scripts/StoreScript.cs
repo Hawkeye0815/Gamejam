@@ -5,6 +5,7 @@ using UnityEngine;
 public class StoreScript : MonoBehaviour
 {
     [SerializeField] GameObject StoreMenu;
+    [SerializeField] GameObject PauseMenu;
     private bool _menuIsActive;
 
 
@@ -17,19 +18,23 @@ public class StoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!PauseMenu.activeSelf)
+        {
+
         if(Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Tab)) 
-       { 
-            if(!_menuIsActive) 
-            {
+        { 
+             if(!_menuIsActive) 
+             {
             Pause();
-            Cursor.lockState = CursorLockMode.None;
-        _menuIsActive = true;
-            }
-            else 
-            {
-            Resume();
-            }
-       } 
+             Cursor.lockState = CursorLockMode.None;
+          _menuIsActive = true;
+              }
+             else 
+             {
+             Resume();
+             }
+         } 
+       }
     }
 
      public void Pause() 
