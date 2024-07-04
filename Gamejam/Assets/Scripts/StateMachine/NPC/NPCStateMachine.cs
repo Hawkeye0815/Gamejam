@@ -11,8 +11,6 @@ public class NPCStateMachine : BaseStateMachine
 
     public NPCIdleState IdleState;
     public NPCPatrolState PatrolState;
-    //public NPCFleeState FleeState;
-    //public NPCHideState HideState;
     public NPCAttackState AttackState;
 
     private Eyes _eyes;

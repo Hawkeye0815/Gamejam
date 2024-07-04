@@ -1,16 +1,18 @@
+using UnityEngine;
+using System;
+using System.Diagnostics;
 
 /// <summary>
 /// Implementation of virtual ears
 /// </summary>
 public class Ears : Sense
 {
-    private SimplePlayerController _playerController;
+    private PlayerController _playerController;
 
     protected override void Start()
     {
         base.Start();
-
-        _playerController = _player.GetComponent<SimplePlayerController>();
+        _playerController = _player.GetComponent<PlayerController>();
     }
 
     protected override void Update()

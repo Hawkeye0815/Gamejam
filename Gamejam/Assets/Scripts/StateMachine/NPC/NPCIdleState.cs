@@ -9,12 +9,16 @@ public class NPCIdleState : BaseState
     public float MaxWaitTime;
 
     private float leaveTime;
+    private float waitForAttack;
 
     public override void OnEnterState(BaseStateMachine controller)
     {
         Debug.Log("NPCIdleState:OnEnterState");
+        NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         leaveTime = Time.time + UnityEngine.Random.Range(MinWaitTime, MaxWaitTime);
+        npcStateMachine.SetAgentSpeedMultiplier(0f);
+        waitForAttack = Time.time + 2f;
     }
 
     public override void OnUpdateState(BaseStateMachine controller)
@@ -23,10 +27,14 @@ public class NPCIdleState : BaseState
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         // Transitions
-        // Can see or hear player > Switch to flee
+        // Can see or hear player > Switch to attack after waiting
         if(npcStateMachine.CanSeePlayer || npcStateMachine.CanHearPlayer) 
         {
-            npcStateMachine.SwitchToState(npcStateMachine.AttackState);
+            if (Time.time > waitForAttack)
+            {
+                npcStateMachine.SwitchToState(npcStateMachine.AttackState);
+            }
+            
         }
         // Time is up > Switch to patrol
         if(Time.time > leaveTime)

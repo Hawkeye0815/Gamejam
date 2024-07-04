@@ -74,7 +74,8 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetCharacterRotation, rotationSpeed * Time.deltaTime);
          }
 
-        IsAudible = speed >= 0.5f;
+        IsAudible = speed >= 0.4f;
 
     }
+    
 }

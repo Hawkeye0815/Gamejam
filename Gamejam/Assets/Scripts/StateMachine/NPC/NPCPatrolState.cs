@@ -20,14 +20,15 @@ public class NPCPatrolState : BaseState
         NPCStateMachine npcStateMachine = controller as NPCStateMachine;
 
         Waypoints = (List<Transform>)Variables.ActiveScene.Get("Path");
-        RandomIndex = npcStateMachine.RandomIndex();
-
+        //RandomIndex = npcStateMachine.RandomIndex();
+        RandomIndex = UnityEngine.Random.Range(0, Waypoints.Count);
         if (_targetPosition == Vector3.zero) 
         {
             _targetPosition = Waypoints[0].position;
         }
 
         npcStateMachine.SetDestination(_targetPosition);
+        npcStateMachine.SetAgentSpeedMultiplier(1f);
     }
 
     public override void OnUpdateState(BaseStateMachine controller)

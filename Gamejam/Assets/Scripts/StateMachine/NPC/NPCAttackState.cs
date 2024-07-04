@@ -33,7 +33,7 @@ public class NPCAttackState : BaseState
             else
             {
                 npcStateMachine.SetDestination(_attackPosition);
-                npcStateMachine.SetAgentSpeedMultiplier(2.5f);
+                npcStateMachine.SetAgentSpeedMultiplier(1f);
             }
        
 
