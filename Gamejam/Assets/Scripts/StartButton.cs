@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour
 {
-public void StartGame() {
-    Loader.Load(Loader.Scene.GameScene);
-   }
+public void StartGame() 
+    {
+        Loader.Load(Loader.Scene.GameScene);
+    }
 
-   public void GoToMenu() {
+   public void GoToMenu() 
+   {
         SceneManager.LoadScene("MainMenu");
    }
 
