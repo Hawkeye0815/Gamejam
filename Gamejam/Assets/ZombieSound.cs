@@ -8,7 +8,6 @@ using UnityEngine;
 public class ZombieSound : MonoBehaviour
 {
     [SerializeField] public AudioClip[] idleSoundClips;
-    public bool TestNoises;
     private bool IsReady;
     private float waitingTime;
     // Start is called before the first frame update

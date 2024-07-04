@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 3295260179226234129}
   - component: {fileID: 1914526194321774416}
   - component: {fileID: 7537336062148172465}
+  - component: {fileID: 5618864515792961123}
   m_Layer: 0
   m_Name: SM_Chr_Zombie_Male_01
   m_TagString: Enemy
@@ -422,6 +423,23 @@ CapsuleCollider:
   m_Height: 2.6985242
   m_Direction: 1
   m_Center: {x: 0, y: 0.34733832, z: 0}
+--- !u!114 &5618864515792961123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187010538823314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cffeb42f3248e4e8f0ea0861e989d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleSoundClips:
+  - {fileID: 8300000, guid: 08ff06427bf823c4bbf81ca8261aaee6, type: 3}
+  - {fileID: 8300000, guid: 6c9985df68961ff4ebb3238b21445e3e, type: 3}
+  - {fileID: 8300000, guid: 061bbf116c34981429d0086e19f07d49, type: 3}
+  - {fileID: 8300000, guid: b63f35602ef8d254689c4c026b92210d, type: 3}
 --- !u!1 &1195061267236796
 GameObject:
   m_ObjectHideFlags: 0
