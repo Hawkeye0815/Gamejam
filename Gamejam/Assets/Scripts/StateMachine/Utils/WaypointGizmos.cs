@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using System.Collections.Generic;
 
 #if UNITY_EDITOR
 /// <summary>
@@ -13,17 +14,17 @@ public class WaypointGizmos
     private static Color colorDisc = new Color(1, 0.28f, 0, 1f);
     
 
-    public static void DrawWayPoints(Transform[] waypoints) 
+    public static void DrawWayPoints(List<Transform> Waypoints) 
     {
-        if (waypoints.Length == 0 || waypoints[waypoints.Length - 1] == null || waypoints[0] == null)
+        if (Waypoints.Count == 0 || Waypoints[Waypoints.Count - 1] == null || Waypoints[0] == null)
             return;
 
-        DrawLine(waypoints[waypoints.Length - 1].position, waypoints[0].position);
-        DrawDisc(waypoints[0].position, Vector3.up);
-        for (int i = 1; i < waypoints.Length; i++)
+        DrawLine(Waypoints[Waypoints.Count - 1].position, Waypoints[0].position);
+        DrawDisc(Waypoints[0].position, Vector3.up);
+        for (int i = 1; i < Waypoints.Count; i++)
         {
-            DrawLine(waypoints[i - 1].position, waypoints[i].position);
-            DrawDisc(waypoints[i].position, Vector3.up);
+            DrawLine(Waypoints[i - 1].position, Waypoints[i].position);
+            DrawDisc(Waypoints[i].position, Vector3.up);
         }
     }
 

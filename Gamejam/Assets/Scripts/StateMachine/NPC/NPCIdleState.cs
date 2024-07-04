@@ -43,10 +43,8 @@ public class NPCIdleState : BaseState
         }
     }
 
-    public override void OnTriggerEnter(BaseStateMachine controller, Collision collision)
-    {
-
-    }
+    
+    
     public override void OnExitState(BaseStateMachine controller)
     {
         Debug.Log("NPCIdleState:OnExitState");

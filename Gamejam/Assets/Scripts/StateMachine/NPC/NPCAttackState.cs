@@ -39,20 +39,6 @@ public class NPCAttackState : BaseState
 
     }
 
-    public override void OnTriggerEnter(BaseStateMachine controller, Collision collision)
-    {
-        Debug.Log("NPCAttackState:Collision");
-        NPCStateMachine npcStateMachine = controller as NPCStateMachine;
-
-        GameObject other = collision.gameObject;
-        if(other.CompareTag("Player"))
-        {
-            float Health = (float)Variables.Object(other).Get("PlayerHealth");
-            Variables.Object(other).Set("PlayerHealth", Health - damage);
-
-            npcStateMachine.SwitchToState(npcStateMachine.IdleState);
-        }
-    }
 
     public override void OnExitState(BaseStateMachine controller)
     {

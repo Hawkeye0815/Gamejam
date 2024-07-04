@@ -25,7 +25,7 @@ public class NPCStateMachine : BaseStateMachine
 #if UNITY_EDITOR
     void OnDrawGizmos()
     {
-        //WaypointGizmos.DrawWayPoints(PatrolState.Waypoints);
+        WaypointGizmos.DrawWayPoints(PatrolState.Waypoints);
     }
 #endif
     public override void Initialize()
